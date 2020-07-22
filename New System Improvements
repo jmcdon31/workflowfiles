@@ -2,6 +2,8 @@ install nvim
 
 install tmux
 
+install docker
+
 install gnome tweak tool
   set caps to ctrl
   
