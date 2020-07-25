@@ -17,7 +17,8 @@
 	sudo docker build https://github.com/jmcdon31/Dockerfiles.git#master:devenv -t devenv && \
 
 #Setup Aliases
-	echo  'alias edit='"'"'sudo docker run --rm -it  -v '"'"'$PWD'"'"':/root/'"'"'${PWD##*/}'"'"' devenv'"'"'' >> ~/.bash_aliases && \
+	echo 'devenva(){ sudo docker run --rm -it -v $PWD:/root/${PWD##*/} devenv; }' >> ~/.bash_aliases && \
+	echo  'alias edit='devenva''>> ~/.bash_aliases && \
 
 #install gnome tweak tool
 	sudo apt-get install gnome-tweak-tool
