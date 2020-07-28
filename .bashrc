@@ -3,7 +3,7 @@
 # for examples
 set -o vi
 export EDITOR="/usr/bin/nvim"
-xset r rate 200 200
+#xset r rate 200 200
 
 # If not running interactively, don't do anything
 case $- in
