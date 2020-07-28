@@ -14,10 +14,21 @@
 
 
 #Download Docker Images
-	sudo docker build https://github.com/jmcdon31/Dockerfiles.git#master:devenv -t devenv && \
+	
+ 	sudo docker image build 	https://github.com/jmcdon31/Dockerfiles.git#master:devenv \
+ 					--build-arg USER_ID=$(id -u ${USER}) \
+ 					--build-arg GROUP_ID=$(id -g ${USER}) \
+ 					--build-arg USER_NAME=${USERNAME} \
+ 					-t devenv && \
 
 #Setup Aliases
-	echo 'devenva(){ sudo docker run --rm -it -v $PWD:/root/${PWD##*/} devenv; }' >> ~/.bash_aliases && \
+	echo 'devenva() { sudo docker run --rm -it \
+				-e DISPLAY \
+				-e TERM	\
+				-v $PWD:$PWD \
+				-v /tmp/.X11-unix:/tmp/.X11-unix \
+				--user=$(id -u $USER):$(id -g $USER) \
+				devenv; }' >> ~/.bash_aliases && \
 	echo  'alias edit='devenva''>> ~/.bash_aliases && \
 
 #install gnome tweak tool
