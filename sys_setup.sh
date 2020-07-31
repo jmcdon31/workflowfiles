@@ -28,7 +28,7 @@
 	sudo docker run --rm -it \
 				-e DISPLAY \
 				-e TERM	\
-				-v $PWD:${PWD##*/}\
+				-v $PWD:/home/$USERNAME/${PWD##*/}\
 				-v /tmp/.X11-unix:/tmp/.X11-unix \
 				--user=$(id -u $USER):$(id -g $USER) \
 				$tmp; }' >> ~/.bash_aliases && \
