@@ -22,13 +22,16 @@
  					-t devenv && \
 
 #Setup Aliases
-	echo 'devenva() { sudo docker run --rm -it \
+	echo 'devenva() { 
+		if [ -z  "$1" ]; then  tmp=devenv; else tmp=$1; fi
+
+	sudo docker run --rm -it \
 				-e DISPLAY \
 				-e TERM	\
-				-v $PWD:$PWD \
+				-v $PWD:${PWD##*/}\
 				-v /tmp/.X11-unix:/tmp/.X11-unix \
 				--user=$(id -u $USER):$(id -g $USER) \
-				devenv; }' >> ~/.bash_aliases && \
+				$tmp; }' >> ~/.bash_aliases && \
 	echo  'alias edit='devenva''>> ~/.bash_aliases && \
 
 #install gnome tweak tool
