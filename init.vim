@@ -9,7 +9,7 @@ map <C-h> <C-W>h
 map <C-k> <C-W>k
 map <C-l> <C-W>l    
 colorscheme solarized
-set background=light
+set background=dark
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
 
