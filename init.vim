@@ -9,10 +9,11 @@ map <C-h> <C-W>h
 map <C-k> <C-W>k
 map <C-l> <C-W>l    
 colorscheme solarized
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+set background=light
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
 
 syntax enable
 set number
 set ruler
-set textwidth=79
+"set textwidth=79
