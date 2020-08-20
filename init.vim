@@ -16,4 +16,9 @@ set background=dark
 syntax enable
 set number
 set ruler
-"set textwidth=79
+set spell
+set colorcolumn=80
+set cursorline
+highlight clear LineNr  "makes number colum the same color as background
+highlight clear CursorLine
+highlight CursorLineNR ctermbg=red
