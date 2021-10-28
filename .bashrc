@@ -1,8 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-set -o vi
-export EDITOR="/usr/bin/nvim"
 #xset r rate 200 200
 
 # If not running interactively, don't do anything
@@ -118,3 +116,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export SHELL=/bin/bash
+export EDITOR=vim
+export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+export LIBGL_ALWAYS_INDIRECT=1
+set -o vi
+
