@@ -19,10 +19,9 @@ devenva() {
       -v /${PWD}:/home/$USERNAME//${PWD##*/}\
       --user=$(id -u $USER):$(id -g $USER) \
       $tmp; }
-         alias edit=devenva
+alias edit=devenva
 
-
-         alias max_container='docker run --rm -it \
+alias max_container='docker run --rm -it \
             -v ${HOME}/.gitconfig:/root/.gitconfig:ro \
             -v ${HOME}/.bashrc:/root/.bashrc:ro \
             -v ${HOME}/.dir_colors:/root/.dir_colors:ro \
@@ -35,4 +34,15 @@ devenva() {
             ras_pi    \
             '
 alias max_container_bash='docker exec -it max_container /bin/bash'
+
+alias gitadd='git ls-files --exclude-standard --others -z | xargs -0 git add'
+alias fnd='date +%D | sed "'"s;/;_;g"'"'
+alias dnote='nvim ${HOME}/Workspace/notes/dailynotes/$(fnd)'
+alias start='Powershell.exe /C start'
+alias ssh_P="ssh -L 8080:address:80   userd@host"
+
+alias cdw="cd /mnt/c/Users/jmcdonald/Workspace/"
+alias monon="sudo update-binfmts --enable cli"
+alias monoff="sudo update-binfmts --disable cli"
+
 
